@@ -1,0 +1,23 @@
+#####
+## If generating JSON for multiple samples, replace '</full/file/path>' or 'null' with '<>', then complete varscan_somatic.sample_list.tab. See
+## ./backup_templates/varscan_somatic.sample_list.template for examples. Be certain to provide a unique identifier under the 'run_uid' header to
+## clearly distinguish samples/runs. If *optional* sample-specific values are desired, the appropriate key from this template may be used as
+## a column header in varscan_somatic.sample_list.tab (be careful to maintain tab-delimited format).
+#####
+normal_pileup: {
+    class: File
+    path: </full/file/path>         # Required file; replace '</full/file/path>' with full path to normal pileup file [e.g., /my/path/to/normal.pileup]
+tumor_pileup: {
+    class: File
+    path: </full/file/path>         # Required file; replace '</full/file/path>' with full path to tumor pileup file [e.g., /my/path/to/tumor.pileup]
+min_var_freq: null                  # Required float; minimum VAF for a variant; 'null' defaults to '0.10'
+min_coverage: null                  # Optional integer; minimum coverage; 'null' defaults to '8'
+min_coverage_normal: null           # Optional integer; minimum coverage in the normal; 'null' defaults to '8'
+min_coverage_tumor: null            # Optional integer; minimum coverage in the tumor; 'null' defaults to '6'
+min_freq_for_hom: null              # Optional float; minimum VAF to call a variant homozygous; 'null' defaults to '0.75'
+normal_purity: null                 # Optional float; 'null' defaults to '1.00'
+p_value: null                       # Optional float; maximum p-value to call a variant; 'null' defaults to '0.99'
+somatic_p_value: null               # Optional float; maximum p-value to call a somatic variant; 'null' defaults to '0.05'
+strand_filter: null                 # Optional boolean; replace 'null' with 'false' to disable strand bias filter; 'null' defaults to 'true'
+tumor_purity: null                  # Optional float; 'null' defaults to '1.00'
+validation: null                    # Optional integer; replace 'null' with 'false' to disable validation mode; 'null' defaults to 'true'
